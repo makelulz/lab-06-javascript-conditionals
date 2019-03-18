@@ -18,7 +18,9 @@ First, let's figure out what day and time it is!
 
 What command did you use, and what was its output?
 ----------
+date
 
+Mon Mar 18 15:38:07 EDT 2019
 
 
 ==========
@@ -26,7 +28,16 @@ What command did you use, and what was its output?
 
 What command did you use, and what was its output?
 ----------
+cal
 
+     March 2019       
+Su Mo Tu We Th Fr Sa  
+                1  2  
+ 3  4  5  6  7  8  9  
+10 11 12 13 14 15 16  
+17 18 19 20 21 22 23  
+24 25 26 27 28 29 30  
+31               
 
 
 ==========
@@ -34,7 +45,8 @@ What command did you use, and what was its output?
 
 What commands did you use to do this?
 ----------
-
+cd ~
+pwd
 
 
 ==========
@@ -42,15 +54,16 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
-
+mkfile -n 3k copy_to_backup.sh ~
+ls
 
 ==========
 5. What are the permissions on copy_to_backup.sh.
 
 What command did you use to find the permissions?
 ----------
-
+only user can read and write
+ls -l copy_to_backup.sh
 
 
 ==========
@@ -58,7 +71,8 @@ What command did you use to find the permissions?
 
 What commands did you use to do this?  What was the output?
 ----------
-
+chmod u+x copy_to_backup.sh
+ls -l copy_to_backup.sh
 
 
 ==========
@@ -68,7 +82,8 @@ $ ./copy_to_backup.sh
 
 What command did you use to try to execute the file?  What happens?
 ----------
-
+./copy_to_backup.sh
+nothing
 
 
 ==========
@@ -76,7 +91,7 @@ What command did you use to try to execute the file?  What happens?
 
 What command did you use to do this?
 ----------
-
+nano copy_to_backup.sh
 
 
 ==========
@@ -94,7 +109,10 @@ The current directory means wherever you happen to be running the commands.
 
 Write out the code in your file below...
 ----------
-
+#!/bin/bash
+mkdir backup
+cp *.txt backup
+echo "I am done backing up"
 
 
 ==========
@@ -108,7 +126,9 @@ Write out the code in your file below...
 
 What commands did you use to do this?
 ----------
-
+cd test
+touch 1.txt
+touch 2.txt
 
 
 ==========
@@ -116,7 +136,7 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
+mv copy_to_backup.sh test/
 
 
 ==========
@@ -125,10 +145,16 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+./copy_to_backup.sh
 
 ==========
 14. Verify that a backup folder was created in your test directory... with copies of the files present.
 
 What commands did you use to do this?  Show the output.
 ----------
+ls 
+1.txt			backup
+2.txt			copy_to_backup.sh
+
+ls backup 
+1.txt	2.txt
